@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minHeight="600.0" minWidth="700.0" style="-fx-background-color: #050816;" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.thatayaone910.voidfront.client.VoidfrontController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: #080F1F; -fx-border-color: #1CE7FF; -fx-border-width: 0 0 1 0;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+         <Region HBox.hgrow="ALWAYS" />
+         <HBox alignment="CENTER" spacing="10.0">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+               <Image url="@icons/ui/time.png" />
+            </ImageView>
+            <Label fx:id="lblTime" style="-fx-font-size: 22; -fx-text-fill: lime; -fx-font-weight: bold;" text="00:00" />
+         </HBox>
+         <Region layoutX="55.0" layoutY="20.0" HBox.hgrow="ALWAYS" />
+         <VBox alignment="CENTER">
+            <children>
+               <Label fx:id="lblKills" style="-fx-font-size: 22; -fx-text-fill: #1CE7FF; -fx-font-weight: bold;" text="0" />
+               <Label style="-fx-font-weight: bold; -fx-font-size: 14; -fx-text-fill: #FFFFFF;" text="KILLS" />
+            </children>
+         </VBox>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane fx:id="scrSectorContainer" hbarPolicy="NEVER" pannable="true" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+         <GridPane fx:id="grdSector" alignment="CENTER" cacheShape="false" style="-fx-background-color: #050816; -fx-border-color: #1CE7FF; -fx-border-width: 2;">
+            </GridPane>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="54.0" prefWidth="700.0" style="-fx-background-color: #080F1F; -fx-border-color: #1CE7FF; -fx-border-width: 1 0 0 0;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+         <HBox alignment="CENTER" spacing="10.0">
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+               <Image url="@icons/ui/shield.png" />
+            </ImageView>
+            <VBox alignment="CENTER_LEFT">
+               <Label style="-fx-font-weight: bold; -fx-font-size: 14; -fx-text-fill: #FFFFFF;" text="SHIELD" />
+               <Label fx:id="lblShield" style="-fx-font-size: 22; -fx-text-fill: #FF5577; -fx-font-weight: bold;" text="0" />
+            </VBox>
+         </HBox>
+         <Region layoutX="217.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+         <Label fx:id="lblStatus" style="-fx-text-fill: lime; -fx-font-weight: bold; -fx-font-size: 20;" text="Initialising the sector..." />
+
+         <Region HBox.hgrow="ALWAYS" />
+
+         <HBox alignment="CENTER" spacing="10.0">
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+               <Image url="@icons/ui/shots.png" />
+            </ImageView>
+            <VBox alignment="CENTER_LEFT">
+               <Label style="-fx-font-weight: bold; -fx-font-size: 14; -fx-text-fill: #FFFFFF;" text="SHOTS" />
+               <Label fx:id="lblShots" style="-fx-font-size: 22; -fx-text-fill: #FFC857; -fx-font-weight: bold;" text="0" />
+            </VBox>
+         </HBox>
+      </HBox>
+   </bottom>
+</BorderPane>
